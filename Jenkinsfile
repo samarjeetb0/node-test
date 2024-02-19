@@ -4,6 +4,10 @@ pipeline {
         stage("build") {
             steps {
                 echo 'building the app ...'
+                script {
+                    def test = 1+1 > 1 ? 'Success' : 'Failed'
+                    echo test
+                }
             }
         }
         stage("test") {
